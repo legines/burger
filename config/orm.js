@@ -1,18 +1,16 @@
 // Import MySQL connection.
 var connection = require("../config/connection.js");
 
-// Helper function for SQL syntax.
+// Helper functions for SQL syntax.
 function printQuestionMarks(num) {
   var arr = [];
 
   for (var i = 0; i < num; i++) {
     arr.push("?");
   }
-
   return arr.toString();
 }
 
-// Helper function for SQL syntax.
 function objToSql(ob) {
   var arr = [];
 
@@ -21,15 +19,12 @@ function objToSql(ob) {
       arr.push(key + "=" + ob[key]);
     }
   }
-
   return arr.toString();
 }
 
-// Object for all our SQL statement functions.
+// ORM
 var orm = {
   selectAll: function(tableInput, cb) {
-
-// Construct the query string that returns all rows from the target table
     var queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function(err, result) {
       if (err) {
@@ -57,7 +52,6 @@ var orm = {
       cb(result);
     });
   },
-  // An example of objColVals would be {name: panther, sleepy: true}
   updateOne: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
 
@@ -71,7 +65,6 @@ var orm = {
       if (err) {
         throw err;
       }
-
       cb(result);
     });
   },
