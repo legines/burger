@@ -15,7 +15,7 @@ A restaurant app that lets users input the names of burgers they'd like to eat.
 
 ## Demo
 
-[Log your burgers today!](https://friendfinder13.herokuapp.com)
+[Log your burgers today!](https://hidden-wave-40839.herokuapp.com)
 
 
 ![Customer: Step 1](/public/assets/img/demo.gif)
